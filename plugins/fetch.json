@@ -1,0 +1,31 @@
+{
+    "com.vresorts.background-geofencing": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/flyqk/com.vresorts.background-geofencing.git",
+            "subdir": "."
+        }
+    },
+    "org.apache.cordova.device": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.device"
+        }
+    },
+    "org.apache.cordova.statusbar": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.statusbar"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.dialogs": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.dialogs"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

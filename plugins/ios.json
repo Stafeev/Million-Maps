@@ -1,0 +1,93 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "framework": {
+                "parents": {
+                    "AudioToolbox.framework": [
+                        {
+                            "xml": true,
+                            "count": 2
+                        }
+                    ],
+                    "AVFoundation.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "CoreLocation.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "NSLocationAlwaysUsageDescription": [
+                        {
+                            "xml": "<string>This app requires background location tracking</string>",
+                            "count": 1
+                        }
+                    ],
+                    "UIBackgroundModes": [
+                        {
+                            "xml": "<array><string>location</string></array>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"BackgroundGeofencing\"><param name=\"ios-package\" value=\"CDVBackgroundGeofencing\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" value=\"CDVStatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"StatusBarOverlaysWebView\" value=\"true\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.vresorts.background-geofencing": {
+            "PACKAGE_NAME": "com.vresorts.tripplan"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.vresorts.tripplan"
+        },
+        "org.apache.cordova.statusbar": {
+            "PACKAGE_NAME": "com.vresorts.tripplan"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.vresorts.tripplan"
+        }
+    },
+    "dependent_plugins": {}
+}
