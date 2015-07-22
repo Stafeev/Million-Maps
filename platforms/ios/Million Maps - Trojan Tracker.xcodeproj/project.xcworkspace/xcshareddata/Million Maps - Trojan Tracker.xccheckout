@@ -10,6 +10,8 @@
 	<string>Million Maps - Trojan Tracker</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>522DB0B169EB51B5990C671B664C2CA7BDD4C3FA</key>
+		<string>https://github.com/Stafeev/Million-Maps.git</string>
 		<key>E3F023C4BFB3B6363B2FDF7FF9E0816BCFB3008B</key>
 		<string>https://github.com/xixixhalu/TripPlanner_PhoneGap.git</string>
 	</dict>
@@ -17,17 +19,27 @@
 	<string>platforms/ios/Million Maps - Trojan Tracker.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E3F023C4BFB3B6363B2FDF7FF9E0816BCFB3008B</key>
+		<key>522DB0B169EB51B5990C671B664C2CA7BDD4C3FA</key>
 		<string>../../../..</string>
+		<key>E3F023C4BFB3B6363B2FDF7FF9E0816BCFB3008B</key>
+		<string>../../../../../TripPlanner%2007:07:2015</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/xixixhalu/TripPlanner_PhoneGap.git</string>
+	<string>https://github.com/Stafeev/Million-Maps.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E3F023C4BFB3B6363B2FDF7FF9E0816BCFB3008B</string>
+	<string>522DB0B169EB51B5990C671B664C2CA7BDD4C3FA</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>522DB0B169EB51B5990C671B664C2CA7BDD4C3FA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Million%20Maps</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
