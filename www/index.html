@@ -108,7 +108,7 @@
 <script type="text/javascript">
 	document.addEventListener("deviceready", initialize, false);
 
-	var VERSION_NUMBER = "0.98E"; // please change number version here everytime there is any update
+	var VERSION_NUMBER = "0.99D"; // please change number version here everytime there is any update
 	var URL_PATH = window.location.path;
 	var URL_STRING = window.location.search;
 	// var ACTIVE_MAP = "Los Angeles";
@@ -129,7 +129,7 @@
         {
             //here is the call to make sure plugin is started in the map view after login.
             currentPage = "map";
-            loadPlans();
+            loadPlansForMap();
         });
         
         $("#page_display_trip_plan").bind("pagebeforeshow", function(event)
@@ -255,6 +255,12 @@
 
 
 </script>
+<script>
+    $(function() {
+      $.mobile.changePage("#page_dispaly_map");
+      });
+</script>
+
 <title>Trip Plan</title>
 </head>
 <body>
@@ -402,9 +408,7 @@
                         Delete Trip Plan
                     </a>
         -->
-				
-				<a data-role="button" href="#" data-icon="action"
-					onclick="completeLogout();">Log Out</a>
+
 			</div>
 		</div>
 	</div>
@@ -419,8 +423,7 @@
 		</div>
 		<div data-role="footer" data-position="fixed">
 			<div data-role="controlgroup" data-type="horizontal" align="center">
-				 <a data-role="button" href="#"
-					data-icon="action" onclick="completeLogout();">Log Out</a>
+
 			</div>
 		</div>
 	</div>

@@ -108,7 +108,7 @@
 <script type="text/javascript">
 	document.addEventListener("deviceready", initialize, false);
 
-	var VERSION_NUMBER = "0.99C"; // please change number version here everytime there is any update
+	var VERSION_NUMBER = "0.99D"; // please change number version here everytime there is any update
 	var URL_PATH = window.location.path;
 	var URL_STRING = window.location.search;
 	// var ACTIVE_MAP = "Los Angeles";
@@ -251,10 +251,13 @@
 		$.mobile.changePage("#page_user_login");
 
 	}
-
-
-
 </script>
+<script>
+    $(function() {
+      $.mobile.changePage("#page_dispaly_map");
+      });
+</script>
+
 <title>Trip Plan</title>
 </head>
 <body>
@@ -302,7 +305,7 @@
 					type="password"> <br> <a data-role="button"
 					onclick="userLoginClicked();">Log In</a>
 			</form>
-			<a data-role="button" onClick="anonymousLoginClicked();">Anonymous
+			<a data-role="button" onclick="anonymousLoginClicked();">Anonymous
 				Login</a>
 		</div>
 	</div>
@@ -345,7 +348,7 @@
 				<label for="input_create_trip_plan_name">Trip Plan Name</label> <input
 					id="input_create_trip_plan_name" type="text" /> <br>
 				<br>
-				<button type="button" onClick="createTripPlanClicked()">Create
+				<button type="button" onclick="createTripPlanClicked()">Create
 					Trip Plan</button>
 			</form>
 		</div>
@@ -402,9 +405,7 @@
                         Delete Trip Plan
                     </a>
         -->
-				
-				<a data-role="button" href="#" data-icon="action"
-					onclick="completeLogout();">Log Out</a>
+
 			</div>
 		</div>
 	</div>
@@ -419,8 +420,6 @@
 		</div>
 		<div data-role="footer" data-position="fixed">
 			<div data-role="controlgroup" data-type="horizontal" align="center">
-				 <a data-role="button" href="#"
-					data-icon="action" onClick="completeLogout();">Log Out</a>
 			</div>
 		</div>
 	</div>
@@ -455,7 +454,7 @@
 			<p>You must log in before you can add places. After clicking "OK"
 				on this page, click the Log In button below the map.</p>
 			<br>
-			<button type="button" data-inline="true" onClick="window.close();">OK</button>
+			<button type="button" data-inline="true" onclick="window.close();">OK</button>
 		</div>
 	</div>
 
@@ -527,7 +526,7 @@
 
 		<div data-role="footer" data-position="fixed">
 			<div data-role="controlgroup" data-type="horizontal" align="center">
-				<a data-role="button"  href="#" data-icon="back" data-direction="reverse" onClick="history.go(-2);">Go
+				<a data-role="button"  href="#" data-icon="back" data-direction="reverse" onclick="history.go(-2);">Go
 					Back</a>
 			</div>
 		</div>
@@ -540,7 +539,7 @@
 		<p>Please have a store employee enter the password to redeem your
 			coupon!</p>
 		<div id="div_password_info"></div>
-        <a href="#" onClick="$('#popup_password').popup('close');" data-role="button" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" >Close</a>
+        <a href="#" onclick="$('#popup_password').popup('close');" data-role="button" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" >Close</a>
         <div data-role="controlgroup" data-type="horizontal" align="center" id="div_pass_buttons">
             
 <!--            <button align="right" onclick="$('#popup_password').popup('close');">Close</button>-->
