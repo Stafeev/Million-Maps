@@ -108,7 +108,7 @@
 <script type="text/javascript">
 	document.addEventListener("deviceready", initialize, false);
 
-	var VERSION_NUMBER = "0.99D"; // please change number version here everytime there is any update
+	var VERSION_NUMBER = "0.99E"; // please change number version here everytime there is any update
 	var URL_PATH = window.location.path;
 	var URL_STRING = window.location.search;
 	// var ACTIVE_MAP = "Los Angeles";
@@ -144,14 +144,14 @@
        //                  });
         
         autoLogin();
-		setInterval(function() {
+		/*setInterval(function() {
 			if (typeof (Storage) !== "undefined") {
 				if (localStorage.placeUpdated === "true") {
 					loadPlaces(window.globalID.tripPlanuuid);
 					localStorage.placeUpdated = "false";
 				}
 			}
-		}, 15000);
+		}, 15000);*/
 
 		var headbanner = document.getElementsByClassName("ui-title");
 		headbanner[0].innerHTML = "Version " + VERSION_NUMBER;
@@ -251,10 +251,13 @@
 		$.mobile.changePage("#page_user_login");
 
 	}
+
+
+
 </script>
 <script>
     $(function() {
-      $.mobile.changePage("#page_dispaly_map");
+      anonymousLoginClicked();
       });
 </script>
 
@@ -420,6 +423,7 @@
 		</div>
 		<div data-role="footer" data-position="fixed">
 			<div data-role="controlgroup" data-type="horizontal" align="center">
+
 			</div>
 		</div>
 	</div>
