@@ -141,7 +141,7 @@ function loadPlaces(tripPlanUUID) {
                                           
                 + "</div>"
                
-                //+ testButton
+                + testButton
 
 
 		        + "</li>"
@@ -151,6 +151,7 @@ function loadPlaces(tripPlanUUID) {
                            {
             $("#redeem-" + place.offer_uuid).hide();
                            }
+                           
             $("#list_view_places").listview("refresh");
             $("#list_view_places").trigger("create");
             if(place.is_subscribed == "true") {
