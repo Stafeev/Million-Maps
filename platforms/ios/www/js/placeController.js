@@ -141,7 +141,7 @@ function loadPlaces(tripPlanUUID) {
                                           
                 + "</div>"
                
-                + testButton
+                //+ testButton
 
 
 		        + "</li>"
