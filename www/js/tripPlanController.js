@@ -20,29 +20,29 @@ $(document).ready(function() {
 function loadTripPlans() {
     // Nested function definition for the success callback that goes to readMultipleTripPlans().
     function loadTripPlansSuccessCB(tripPlanList) {
-        $("#list_view_trip_plans").empty();
-
-        tripPlanList.forEach( function(tripPlan) {
-            // Makes a javascript Date object from Unix Epoch Time.
-            var dateTime = new Date(tripPlan.created);
-
-            $("#list_view_trip_plans").append(
-                "<li>"
-                + "Trip Plan Name: <i>" + tripPlan.trip_plan_name + "</i><br>"
-                + "Created: <i>" + dateTime.toString() + "</i><br>"
-                + "<div data-role='controlgroup' data-type='horizontal'>"
-                + "<a href='#' data-role='button' data-icon='eye' data-mini='true'"
-                + "onclick=\x22$.mobile.changePage(\x27#page_view_trip_places\x27); "
-                + "loadTripPlaces(\x27" + tripPlan.uuid + "\x27);\x22>View As List</a>"
-                + "<a href='#' data-role='button' data-icon='delete' data-mini='true'"
-                + "onclick=\x22deleteTripPlanClickedUnconfirmed(\x27" + tripPlan.uuid + "\x27);\x22>Delete</a>"
-                + "</div>"
-		        + "</li>"
-		    );
-
-            $("#list_view_trip_plans").trigger("create");
-            $("#list_view_trip_plans").listview("refresh");
-        });
+//        $("#list_view_trip_plans").empty();
+//
+//        tripPlanList.forEach( function(tripPlan) {
+//            // Makes a javascript Date object from Unix Epoch Time.
+//            var dateTime = new Date(tripPlan.created);
+//
+//            $("#list_view_trip_plans").append(
+//                "<li>"
+//                + "Trip Plan Name: <i>" + tripPlan.trip_plan_name + "</i><br>"
+//                + "Created: <i>" + dateTime.toString() + "</i><br>"
+//                + "<div data-role='controlgroup' data-type='horizontal'>"
+//                + "<a href='#' data-role='button' data-icon='eye' data-mini='true'"
+//                + "onclick=\x22$.mobile.changePage(\x27#page_view_trip_places\x27); "
+//                + "loadTripPlaces(\x27" + tripPlan.uuid + "\x27);\x22>View As List</a>"
+//                + "<a href='#' data-role='button' data-icon='delete' data-mini='true'"
+//                + "onclick=\x22deleteTripPlanClickedUnconfirmed(\x27" + tripPlan.uuid + "\x27);\x22>Delete</a>"
+//                + "</div>"
+//		        + "</li>"
+//		    );
+//
+//            $("#list_view_trip_plans").trigger("create");
+//            $("#list_view_trip_plans").listview("refresh");
+//        });
     }
 
     // Nested function definition for the error callback that goes to readMultipleTripPlans()
@@ -51,7 +51,10 @@ function loadTripPlans() {
     }
 
     // Reads the trip plans
-    readMultipleTripPlans("user_uuid", USER_UUID, loadTripPlansSuccessCB, loadTripPlansErrorCB);
+    //readMultipleTripPlans("user_uuid", USER_UUID, loadTripPlansSuccessCB, loadTripPlansErrorCB);
+    $.getJSON(window.globalURL + "/getTripPlans?user_uuid="+ USER_UUID + "&" + window.apikey, function(tripPlans){
+              loadTripPlansSuccessCB(tripPlans);
+              });
 }
 
 function createTripPlanClickedUnconfirmed() {
@@ -166,7 +169,10 @@ function loadTripPlansToSelect() {
         // Do nothing.
     }
 
-    readMultipleTripPlans("user_uuid", USER_UUID, loadTripPlansToSelectSuccessCB, loadTripPlansToSelectErrorCB);
+		//readMultipleTripPlans("user_uuid", USER_UUID, loadTripPlansToSelectSuccessCB, loadTripPlansToSelectErrorCB);
+		$.getJSON(window.globalURL + "/getTripPlans?user_uuid="+ USER_UUID + "&" + window.apikey, function(tripPlans){
+    		loadTripPlansToSelectSuccessCB(tripPlans);
+        });
 }
 
 function facebookShare() {

@@ -27,49 +27,49 @@ function getCouponClicked(offerID, partnerID, couponImage){
     CouponCode = MTimeStampString.concat(myOfferID.replace(/-/g,''));
     if (currentPage == "map")
     {
-        
+    
     }
     else
     {
-        refreshListview(myOfferID, "");
+    refreshListview(myOfferID, "");
     }
-    
+
     localStorage.removeItem(myOfferID);
     
-    //    readOffer(offerID, function() {
-    //              //display coupon
-    //              $('#div_coupon_image').append('<img src="data:image/png;base64,' + couponImage + '" height="100%" width="100%" position="relative" />');
-    //              $('#div_coupon_barcode').barcode(CouponCode, "code93",{barWidth:1, barHeight:50});
-    //              $('#div_coupon_storecode').append('<h4>Store code: ' + window.globalID.couponEncode.substr(0,3)
-    //                                                + window.globalID.couponEncode.slice(-3)+ '</h4>');
-    //              $('#div_coupon_barcode').empty();
-    //
-    //
-    //
-    //              //pushTransaction();
-    //
-    //              },
-    //              function(){
-    //              $('#div_coupon_image').append('Unable to get coupon at this time.');
-    //
-    //              });
+//    readOffer(offerID, function() {
+//              //display coupon
+//              $('#div_coupon_image').append('<img src="data:image/png;base64,' + couponImage + '" height="100%" width="100%" position="relative" />');
+//              $('#div_coupon_barcode').barcode(CouponCode, "code93",{barWidth:1, barHeight:50});
+//              $('#div_coupon_storecode').append('<h4>Store code: ' + window.globalID.couponEncode.substr(0,3)
+//                                                + window.globalID.couponEncode.slice(-3)+ '</h4>');
+//              $('#div_coupon_barcode').empty();
+//              
+//              
+//
+//              //pushTransaction();
+//             
+//              },
+//              function(){
+//              $('#div_coupon_image').append('Unable to get coupon at this time.');
+//
+//              });
     
     $.getJSON(window.globalURL + '/getOffer?offer_uuid='+ offerID + "&" + window.apikey, function() {
-              //push transaction
-              pushTransaction();
+        //push transaction
+        pushTransaction();
+        //display coupon
+        $('#div_coupon_image').append('<img src="data:image/png;base64,' + couponImage + '" height="100%" width="100%" position="relative" />');
+        $('#div_coupon_barcode').barcode(CouponCode, "code93",{barWidth:1, barHeight:50});
+        $('#div_coupon_storecode').append('<h4>Store code: ' + window.globalID.couponEncode.substr(0,3)
+                                        + window.globalID.couponEncode.slice(-3)+ '</h4>');
+        $('#div_coupon_barcode').empty();
+        
+    }).fail(function(){
+        $('#div_coupon_image').append('Unable to get coupon at this time.');
+    });
               
-              //display coupon
-              $('#div_coupon_image').append('<img src="data:image/png;base64,' + couponImage + '" height="100%" width="100%" position="relative" />');
-              $('#div_coupon_barcode').barcode(CouponCode, "code93",{barWidth:1, barHeight:50});
-              $('#div_coupon_storecode').append('<h4>Store code: ' + window.globalID.couponEncode.substr(0,3)
-                                                + window.globalID.couponEncode.slice(-3)+ '</h4>');
-              $('#div_coupon_barcode').empty();
-              
-              }).fail(function(){
-                      $('#div_coupon_image').append('Unable to get coupon at this time.');
-                      });
-    
     $.mobile.changePage("#page_coupon");
+
 }
 
 
@@ -84,5 +84,5 @@ function pushTransaction(){
               else {
               respMsg = "fail";
               }
-              });
+                           });
 }

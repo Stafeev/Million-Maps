@@ -43,7 +43,7 @@ function passwordClicked(uuid, place_name) {
                            });
     $("#popup_password").popup("open");
     //Performance note: call on local data will be faster --> wating for improvement
-    $.getJSON(window.globalURL + "/getPlaces?trip_plan_uuid=" + window.globalID.tripPlanuuid, function(tripplan){
+    $.getJSON(window.globalURL + "/getPlaces?trip_plan_uuid=" + window.globalID.tripPlanuuid + "&" + window.apikey, function(tripplan){
               $.each(tripplan.places, function(i, item){
                      var tmpID = item.uuid;
                      var tmpIsSub = item.is_subscribed;
@@ -54,7 +54,7 @@ function passwordClicked(uuid, place_name) {
             })
     });
     
-    $.getJSON(window.globalURL + "/getOffer2?offer_uuid="+ window.globalID.offeruuid, function(offer){
+    $.getJSON(window.globalURL + "/getOffer?offer_uuid="+ window.globalID.offeruuid + "&" + window.apikey, function(offer){
               redeemPassword = offer.redeem_password;
               partnerUUID = offer.partner_uuid;
               couponIMAGE = offer.coupon.image_data;

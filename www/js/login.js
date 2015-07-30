@@ -2,15 +2,20 @@
 var CLIENT;
 var USER_UUID = "0";
 var PARTNER_UUID = "0";
-var ORG_NAME = "vresorts";
-var APP_NAME = "futuretravel";
+var ORG_NAME = "millionmaps";
+var APP_NAME = "millionmaps";
+var theClientID = "b3U6wIujyh-AEeW0RM2Nf4UrHg";
+var theSecret = "b3U6EUeG_JoD5IC4EDVS6R3Xe68DH1Y";
 
 function doUserLogin(loginObj, successCB, errorCB) {
     var clientCreds = {
         orgName:ORG_NAME,
         appName:APP_NAME,
         logging: true,
-        buildCurl: true
+        buildCurl: true,
+        clientId : theClientID,
+        clientSecret : theSecret,
+        authType : Apigee.AUTH_CLIENT_ID
     };
 
     CLIENT = new Apigee.Client(clientCreds);
@@ -69,7 +74,10 @@ function postNewUser(createUserObj, successCB, errorCB) {
         orgName:ORG_NAME,
         appName:APP_NAME,
         logging: true,
-        buildCurl: true
+        buildCurl: true,
+        clientId : theClientID,
+        clientSecret : theSecret,
+        authType : Apigee.AUTH_CLIENT_ID
     };
 
     var tempClient = new Apigee.Client(clientCreds);
@@ -99,7 +107,10 @@ function doPartnerLogin(loginObj, successCB, errorCB) {
         orgName:ORG_NAME,
         appName:APP_NAME,
         logging: true,
-        buildCurl: true
+        buildCurl: true,
+        clientId : theClientID,
+        clientSecret : theSecret,
+        authType : Apigee.AUTH_CLIENT_ID
     };
 
     CLIENT = new Apigee.Client(clientCreds);
@@ -142,7 +153,10 @@ function postNewPartner(createPartnerObj, successCB, errorCB) {
         orgName:ORG_NAME,
         appName:APP_NAME,
         logging: true,
-        buildCurl: true
+        buildCurl: true,
+        clientId : theClientID,
+        clientSecret : theSecret,
+        authType : Apigee.AUTH_CLIENT_ID
     };
 
     var tempClient = new Apigee.Client(clientCreds);
@@ -176,7 +190,10 @@ function doGuestLogin() {
         orgName:ORG_NAME,
         appName:APP_NAME,
         logging: true,
-        buildCurl: true
+        buildCurl: true,
+        clientId : theClientID,
+        clientSecret : theSecret,
+        authType : Apigee.AUTH_CLIENT_ID
     };
 
     CLIENT = new Apigee.Client(clientCreds);

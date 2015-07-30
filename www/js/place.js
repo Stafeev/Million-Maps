@@ -47,7 +47,7 @@ function togglePlaceSubscription(placeUUID) {
             $.ajax({
                 type: "PUT", 
                 dataType: "json",
-                url: window.globalURL + "/disablePlaceSubscription",
+                url: window.globalURL + "/disablePlaceSubscription" + "?" + window.apikey,
                 data: unsubscribeData,
                 success: function(data){
                     console.log("backgroundGeofencing disablePlace!!");
@@ -60,7 +60,7 @@ function togglePlaceSubscription(placeUUID) {
             $.ajax({
                 type: "PUT", 
                 dataType: "json",
-                url: window.globalURL + "/enablePlaceSubscription",
+                url: window.globalURL + "/enablePlaceSubscription" + "?" + window.apikey,
                 data: unsubscribeData,
                 success: function(data){                    
                     console.log("backgroundGeofencing enablePlace!!");
@@ -76,7 +76,7 @@ function togglePlaceSubscription(placeUUID) {
     }
    
     //getEntity("place", placeUUID, PLACE_ATTRIBUTES, togglePlaceSubscriptionSuccessCB, togglePlaceSubscriptionErrorCB);
-    $.getJSON(window.globalURL + "/getPlace?place_uuid=" + placeUUID, function(place){
+    $.getJSON(window.globalURL + "/getPlace?place_uuid=" + placeUUID + "&" + window.apikey, function(place){
         togglePlaceSubscriptionSuccessCB(place);
     });
 }

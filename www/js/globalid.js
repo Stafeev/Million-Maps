@@ -6,8 +6,9 @@ var globalID = {
 //        couponImage: = "undefined",
         couponEncode: "undefined"
 };
-window.globalURL = "http://xixixhalu-test.apigee.net/proxy/tripPlanner";
+window.globalURL = "https://millionmaps-prod.apigee.net/v1/tripPlanner";
 window.globalID = globalID;
+window.apikey = "apikey=oAtBFoloGGPjoc5aSzlGrxupgDsZ69gA";
 
 var loaded = false;
 var currentPage = "map";
