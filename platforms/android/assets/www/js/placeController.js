@@ -23,6 +23,7 @@ function requestTripPlan(url, callback){
 }
 
 function loadPlaces(tripPlanUUID) {
+    ActivityIndicator.show("Loading");
     if(tripPlanUUID !== "undefined") {
     }
     else {
@@ -159,6 +160,7 @@ function loadPlaces(tripPlanUUID) {
 //                $("#checkbox-"+ place.uuid).attr("checked", true).checkboxradio("refresh");
             }
         });
+        ActivityIndicator.hide();
     }
 
 //    readMultiplePlaces("trip_plan_uuid", tripPlanUUID, loadPlacesSuccessCB, loadPlacesErrorCB);

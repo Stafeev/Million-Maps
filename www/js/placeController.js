@@ -23,6 +23,7 @@ function requestTripPlan(url, callback){
 }
 
 function loadPlaces(tripPlanUUID) {
+    ActivityIndicator.show("Loading");
     if(tripPlanUUID !== "undefined") {
     }
     else {
@@ -141,7 +142,7 @@ function loadPlaces(tripPlanUUID) {
                                           
                 + "</div>"
                
-                //+ testButton - comment test button
+                //+ testButton
 
 
 		        + "</li>"
@@ -151,6 +152,7 @@ function loadPlaces(tripPlanUUID) {
                            {
             $("#redeem-" + place.offer_uuid).hide();
                            }
+                           
             $("#list_view_places").listview("refresh");
             $("#list_view_places").trigger("create");
             if(place.is_subscribed == "true") {
@@ -158,13 +160,14 @@ function loadPlaces(tripPlanUUID) {
 //                $("#checkbox-"+ place.uuid).attr("checked", true).checkboxradio("refresh");
             }
         });
+        ActivityIndicator.hide();
     }
 
 //    readMultiplePlaces("trip_plan_uuid", tripPlanUUID, loadPlacesSuccessCB, loadPlacesErrorCB);
 // 		read data from api.
     // for test
     //tripPlanUUID = 'a137a68a-be1f-11e4-a532-9192b501077c';
-    requestTripPlan(window.globalURL + '/getPlaces?trip_plan_uuid='+tripPlanUUID, function(tripplan){
+    requestTripPlan(window.globalURL + '/getPlaces?trip_plan_uuid='+tripPlanUUID + '&' + window.apikey, function(tripplan){
     	loadPlacesSuccessCB(tripplan.places);
         // Nested function definition for the error callback that goes to readMultiplePlaces()
         function loadPlacesErrorCB() {

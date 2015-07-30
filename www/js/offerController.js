@@ -4,9 +4,9 @@
 //});
 
 function offerDetailsClicked(uuid) {
-    
+    ActivityIndicator.show("Loading");
     // Nested function definition for the success callback that goes to readOffer().
-    $.getJSON(window.globalURL + "/getOffer2?offer_uuid="+ uuid, function(offer){
+    $.getJSON(window.globalURL + "/getOffer?offer_uuid="+ uuid + "&" + window.apikey, function(offer){
               $("#div_view_offer_detail").empty();
               $("#div_view_offer_title").empty();
               $("#div_view_offer_img").empty();
@@ -46,7 +46,7 @@ function offerDetailsClicked(uuid) {
                                                  + "</table>"
                                                  + "<br>"
                                                  );
-            
+                ActivityIndicator.hide();
                 $.mobile.changePage("#page_view_offer_details");
               
               });
