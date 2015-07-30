@@ -108,7 +108,7 @@
 <script type="text/javascript">
 	document.addEventListener("deviceready", initialize, false);
 
-	var VERSION_NUMBER = "0.99F"; // please change number version here everytime there is any update
+	var VERSION_NUMBER = "0.99G"; // please change number version here everytime there is any update
 	var URL_PATH = window.location.path;
 	var URL_STRING = window.location.search;
 	// var ACTIVE_MAP = "Los Angeles";
@@ -256,14 +256,25 @@
 
 </script>
 <script>
-    $(function() {
+    /*$(function() {
       anonymousLoginClicked();
-      });
+      });*/
+function onLoad() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+// device APIs are available
+//
+function onDeviceReady() {
+    // Now safe to use device APIs
+    anonymousLoginClicked();
+}
+
 </script>
 
 <title>Trip Plan</title>
 </head>
-<body>
+<body onload="onLoad()">
 	<div data-role="page" id="page_user_auto_login">
 		<div data-role="header"></div>
 		<div data-role="main"></div>
